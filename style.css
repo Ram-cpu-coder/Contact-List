@@ -1,6 +1,6 @@
 
 .wrapper {
-    background: url("./bg.jpg") no-repeat center;
+    background: black no-repeat center;
     background-size: cover;
   }
   
@@ -63,9 +63,17 @@
 
   #appScreen{
     backdrop-filter: blur(10px);
+    display: none;
   }
   .searchIcon{
     top: 3px;
     right: 12px;
     color: black;
   }
+
+#contactListScreen{
+    display: none;
+}
+/* #contact-list{
+    display: none;
+} */
