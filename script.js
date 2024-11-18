@@ -657,18 +657,16 @@ const displayContactList = (userList) => {
     userCountElement.innerText = userNumber;
 
     //update the contactAccordion
-
     const contactAccordion = document.getElementById("contactAccordion");
     contactAccordion.innerHTML = "";
 
     userList.map((item, index) => {
-        console.log(item);
 
         const accItem = `
         <div class="accordion-item">
                             <h2 class="accordion-header">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                    data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                                    data-bs-target="#contact-${index}" aria-expanded="true" aria-controls="collapseOne">
                                     <img src="${item.picture.medium}" width="50px" height="50px" class="rounded-circle">
                                     <div class="ms-2">
                                         <div class="fw-bolder">${item.name.title} ${item.name.first} ${item.name.last}</div>
@@ -679,7 +677,7 @@ const displayContactList = (userList) => {
 
                                 </button>
                             </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse"
+                            <div id="contact-${index}" class="accordion-collapse collapse"
                                 data-bs-parent="#contactAccordion">
                                 <div
                                     class="accordion-body d-flex flex-column justify-content-center align-items-center">
@@ -704,7 +702,7 @@ const displayContactList = (userList) => {
 
                                         <div class="">
                                             <i class="bi bi-geo-alt-fill"></i>
-                                            <span>${item.location.city}, ${item.location.country}</span>
+                                            <span>  ${item.location.street.number}, ${item.location.street.name}, ${item.location.city}, ${item.location.country}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -716,9 +714,6 @@ const displayContactList = (userList) => {
 }
 // ==============================================
 const displayAppScreen = () => {
-
-    // appScreen.classList.remove("hidden");
-
     displayScreen("appScreen");
 }
 
