@@ -646,13 +646,73 @@ const displayScreen = (screenName) => {
 }
 
 // ==============================================
-
+//display count 
+//display the contact list in the accordion
 const displayContactList = (userList) => {
-    let userNumber = userList.length;
 
+    //update the contact count 
+    let userNumber = userList.length;
     const userCountElement = document.getElementById("userCount");
 
     userCountElement.innerText = userNumber;
+
+    //update the contactAccordion
+
+    const contactAccordion = document.getElementById("contactAccordion");
+    contactAccordion.innerHTML = "";
+
+    userList.map((item, index) => {
+        console.log(item);
+
+        const accItem = `
+        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                                    <img src="./ram.jpg" width="50px" height="50px" class="rounded-circle">
+                                    <div class="ms-2">
+                                        <div class="fw-bolder">${item.name.title} ${item.name.first} ${item.name.last}</div>
+                                        <div class="">
+                                            ${item.location.street.number}, ${item.location.street.name}
+                                        </div>
+                                    </div>
+
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse"
+                                data-bs-parent="#contactAccordion">
+                                <div
+                                    class="accordion-body d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./ram.jpg" alt="" srcset="" height="150px" width="150px"
+                                        class="rounded-circle">
+                                    <div class="d-flex flex-column mt-2">
+
+                                        <div class="">
+                                            <i class="bi bi-person-fill fs-5"></i>
+                                            <span>Ram Kumar Dhimal</span>
+                                        </div>
+
+                                        <div class="">
+                                            <i class="bi bi-phone-fill fs-5"></i>
+                                            <span>+61 042565666</span>
+                                        </div>
+
+                                        <div class="">
+                                            <i class="bi bi-envelope-fill"></i>
+                                            <span>ram@gmail.com</span>
+                                        </div>
+
+                                        <div class="">
+                                            <i class="bi bi-geo-alt-fill"></i>
+                                            <span>Sydney, Australia</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        `
+        contactAccordion.innerHTML += accItem;
+    })
 }
 // ==============================================
 const displayAppScreen = () => {
