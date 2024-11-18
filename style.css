@@ -7,6 +7,9 @@
  .h100{
     height: 100%;
  }
+ .hidden{
+    display: none;
+ }
   .phone {
     background: url("./mbg.jpg") no-repeat center;
     background-size: cover;
@@ -22,7 +25,9 @@
   }
   
   .notification {
-    background-color: rgba(159, 159, 159, 0.366);
+    background-color: rgba(17, 16, 16, 0.8);
+    backdrop-filter: blur(20px);
+    
   }
   
   .sliderContainer {

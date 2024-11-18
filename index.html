@@ -17,7 +17,7 @@
     <div class="wrapper d-flex justify-content-center align-items-center min-vh-100 ">
         <div class="phone bg-dark rounded-5 border border-5 border-success shadow-lg text-white overflow-y-scroll">
             <!-- notification -->
-            <div id="notification" class="notification d-flex justify-content-between p-2">
+            <div id="notification" class="notification shadow d-flex justify-content-between p-2 sticky-top">
                 <span>10:10</span>
                 <div class="bg-dark w-25 rounded-pill"></div>
                 <div>
@@ -51,7 +51,7 @@
                 <div class="p-2 mt-1 text-primary">
                     <h2>Contacts</h2>
                 </div>
-                <div class="position-relative p-1">
+                <div class="position-relative p-1 m-1">
                     <!-- search form -->
                     <input type="search" name="Search" id="search" placeholder="Search Contact"
                         class="rounded-pill form-control">
@@ -59,7 +59,7 @@
 
                 </div>
                 <!-- spinner -->
-                <div class="text-center">
+                <div class="text-center hidden">
                     <div class="spinner-border text-danger" role="status" id="spinner">
                         <span class="visually-hidden">Loading...</span>
                     </div>
@@ -77,9 +77,9 @@
                                     data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                     <img src="./ram.jpg" width="50px" height="50px" class="rounded-circle">
                                     <div class="ms-2">
-                                        <div class="fw-bolder">USER NAME</div>
+                                        <div class="fw-bolder">Ram Kumar Dhimal</div>
                                         <div class="">
-                                            STREET NAME
+                                            Sydney, Australia
                                         </div>
                                     </div>
 
@@ -89,23 +89,71 @@
                                 data-bs-parent="#accordionExample">
                                 <div
                                     class="accordion-body d-flex flex-column justify-content-center align-items-center">
-                                    <img src="./ram.jpg" alt="" srcset="" height="200px" width="200px"
+                                    <img src="./ram.jpg" alt="" srcset="" height="150px" width="150px"
                                         class="rounded-circle">
                                     <div class="d-flex flex-column mt-2">
 
                                         <div class="">
-                                            <i class="bi bi-person-circle"></i>
-                                            <span>UserNAME</span>
+                                            <i class="bi bi-person-fill fs-5"></i>
+                                            <span>Ram Kumar Dhimal</span>
                                         </div>
 
                                         <div class="">
-                                            <i class="bi bi-phone-fill"></i>
-                                            <span>498534573405</span>
+                                            <i class="bi bi-phone-fill fs-5"></i>
+                                            <span>+61 042565666</span>
                                         </div>
 
                                         <div class="">
-                                            <i class="bi bi-envelope"></i>
-                                            <span>user@gmail.com</span>
+                                            <i class="bi bi-envelope-fill"></i>
+                                            <span>ram@gmail.com</span>
+                                        </div>
+
+                                        <div class="">
+                                            <i class="bi bi-geo-alt-fill"></i>
+                                            <span>Sydney, Australia</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion" id="accordionExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseOne">
+                                    <img src="./ram.jpg" width="50px" height="50px" class="rounded-circle">
+                                    <div class="ms-2">
+                                        <div class="fw-bolder">Ram Kumar Dhimal</div>
+                                        <div class="">
+                                            Sydney, Australia
+                                        </div>
+                                    </div>
+
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse show"
+                                data-bs-parent="#accordionExample">
+                                <div
+                                    class="accordion-body d-flex flex-column justify-content-center align-items-center">
+                                    <img src="./ram.jpg" alt="" srcset="" height="150px" width="150px"
+                                        class="rounded-circle">
+                                    <div class="d-flex flex-column mt-2">
+
+                                        <div class="">
+                                            <i class="bi bi-person-fill fs-5"></i>
+                                            <span>Ram Kumar Dhimal</span>
+                                        </div>
+
+                                        <div class="">
+                                            <i class="bi bi-phone-fill fs-5"></i>
+                                            <span>+61 042565666</span>
+                                        </div>
+
+                                        <div class="">
+                                            <i class="bi bi-envelope-fill"></i>
+                                            <span>ram@gmail.com</span>
                                         </div>
 
                                         <div class="">
