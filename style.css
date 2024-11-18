@@ -1,0 +1,61 @@
+
+.wrapper {
+    background: url("./bg.jpg") no-repeat center;
+    background-size: cover;
+  }
+  
+ .h100{
+    height: 100vh;
+ }
+  .phone {
+    background: url("./mbg.jpg") no-repeat center;
+    background-size: cover;
+  }
+  
+  .phone {
+    width: 300px;
+    height: 600px;
+  }
+  
+  .phone::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .notification {
+    background-color: rgba(159, 159, 159, 0.366);
+  }
+  
+  .sliderContainer {
+    top: 400px;
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(20px);
+  }
+  
+  .slider {
+    appearance: none;
+    z-index: 99;
+    background-color: transparent;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 40px;
+    height: 40px;
+    background: radial-gradient(rgb(36, 80, 199), rgb(12, 30, 189));
+  
+    border-radius: 50%;
+    background: url("./right.gif") no-repeat center;
+    background-size: cover;
+  }
+  
+  .slider-label {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  
+    pointer-events: none;
+  }
+
+  #appScreen{
+    backdrop-filter: blur(10px);
+  }
