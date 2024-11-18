@@ -5,7 +5,7 @@
   }
   
  .h100{
-    height: 100vh;
+    height: 100%;
  }
   .phone {
     background: url("./mbg.jpg") no-repeat center;
@@ -58,4 +58,9 @@
 
   #appScreen{
     backdrop-filter: blur(10px);
+  }
+  .searchIcon{
+    top: 3px;
+    right: 12px;
+    color: black;
   }
