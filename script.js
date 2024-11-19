@@ -12,7 +12,7 @@ const updateDateAndtime = () => {
     const today = new Date();
 
     for (items of timeElm) {
-        items.innerText = today.getHours() % 12 + ":" + today.getMinutes();
+        items.innerText = (today.getHours() % 12).toString().padStart(2, 0) + ":" + today.getMinutes().toString().padStart(2, 0);
     }
 
     let dayIndex = today.getDay();
