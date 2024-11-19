@@ -28,9 +28,22 @@
             </div>
 
             <!-- Lock Screen -->
-            <main id="lockScreen" class="screen postition-relative">
-                <div class="sliderContainer p-3 rounded-4 m-2 position-relative d-flex">
-                    <label class="slider-label text-danger position-absolute">Slide to Unlock</label>
+            <main id="lockScreen" class="screen postition-relative h100">
+                
+                <!-- time and day -->
+                <div class="time d-flex flex-column justify-content-center align-items-center">
+                   
+                       <span id="day" class = "fs-5">
+                       </span>
+                    
+                        <span id="time" class="p-1">
+                        10:00
+                    </span>
+                
+                
+                </div>
+                <div class="sliderContainer p-3 rounded-4  position-relative d-flex">
+                    <label class="slider-label text-white position-absolute">Slide to Unlock</label>
                     <input type="range" id="slider" class="slider w-100" min="0" max="100" value="0">
                 </div>
             </main>
@@ -49,8 +62,8 @@
             <main id="contactListScreen" class="screen">
 
                 <!-- header -->
-                <div class="p-2 mt-1 text-primary">
-                    <h2>Contacts</h2>
+                <div class="p-2 mt-1 text-white">
+                    <h2 class="text-center">Contacts</h2>
                 </div>
                 <div class="position-relative p-1 m-1">
 

@@ -29,8 +29,8 @@
   }
   
   .sliderContainer {
-    top: 400px;
-    background-color: rgba(255, 255, 255, 0.5);
+    top: 140px;
+    background-color: rgba(10, 10, 10, 0.2);
     backdrop-filter: blur(20px);
   }
   
@@ -44,9 +44,7 @@
     appearance: none;
     width: 40px;
     height: 40px;
-    background: radial-gradient(rgb(36, 80, 199), rgb(12, 30, 189));
-  
-    border-radius: 50%;
+    
     background: url("./right.gif") no-repeat center;
     background-size: cover;
   }
@@ -58,7 +56,12 @@
   
     pointer-events: none;
   }
-
+.time{
+  height: 50%;
+}
+#time{
+  font-size: 60px;
+}
   #appScreen{
     backdrop-filter: blur(10px);
     display: none;
@@ -73,5 +76,5 @@
     display: none;
 }
 #contact-list{
-  
+
 }
