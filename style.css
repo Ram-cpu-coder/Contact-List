@@ -7,6 +7,10 @@
  .h100{
     height: 100%;
  }
+ .decoration{
+  text-decoration: none;
+  color: black;
+ }
  
   .phone {
     background: url("./mbg.jpg") no-repeat center;

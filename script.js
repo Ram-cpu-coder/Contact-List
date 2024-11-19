@@ -1,7 +1,7 @@
 
 //================================================
 //apiUrl to get the random user data
-const apiUrl = "https://randomuser.me/api?results=100";
+const apiUrl = "https://randomuser.me/api?results=10";
 
 // =====================================================
 // date and time on the lock screen
@@ -103,12 +103,12 @@ const updateDateAndtime = () => {
 
     }
 }
+updateDateAndtime();
 setInterval(() => {
     updateDateAndtime();
+}, 60000);
 
-}, 1000);
-
-
+// =====================================================
 // const dayElm = document.getElementsByClassName("day");
 // const timeElm = document.getElementById("Time");
 // const today = new Date();
@@ -327,19 +327,24 @@ const displayContactList = (userList) => {
                                             <span>${item.name.title}. ${item.name.first} ${item.name.last}</span>
                                         </div>
 
-                                        <div class="">
-                                            <i class="bi bi-phone-fill fs-5"></i>
+                                        <div>
+                                           <a href="tel:${item.phone}"class="decoration"><i class="bi bi-phone-fill fs-5"></i>
                                             <span>${item.phone}</span>
+                                            </a>
                                         </div>
 
                                         <div class="">
+                                        <a href="tel:${item.email}" class="decoration">
                                             <i class="bi bi-envelope-fill"></i>
                                             <span>${item.email}</span>
+                                            </a>
                                         </div>
 
                                         <div class="">
+                                        <a href="https://www.google.com/maps/search/${item.location.street.number},+${item.location.street.name}, +${item.location.city}, +${item.location.state}, +${item.location.country}/@-33.876295,151.1985883,15z?entry=ttu&g_ep=EgoyMDI0MTExMy4xIKXMDSoASAFQAw%3D%3D" class="decoration">
                                             <i class="bi bi-geo-alt-fill"></i>
                                             <span>  ${item.location.street.number}, ${item.location.street.name}, ${item.location.city}, ${item.location.country}</span>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
