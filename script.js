@@ -258,7 +258,7 @@ let contactList = [{
 // ==============================================
 //adding change event trigger for slider value change 
 const slider = document.getElementById("slider");
-
+const lock_Screen = document.getElementById("lockScreen");
 slider.addEventListener("change", (e) => {
     const { value } = e.target;
 
@@ -266,7 +266,9 @@ slider.addEventListener("change", (e) => {
         slider.value = 0;
 
     } else {
+        lock_Screen.style.display = "none";
         displayAppScreen();
+
     }
 })
 

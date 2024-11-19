@@ -3,7 +3,9 @@
     background: black no-repeat center;
     background-size: cover;
   }
-  
+  .h80{
+    height: 80%;
+  }
  .h100{
     height: 100%;
  }
@@ -13,7 +15,7 @@
  }
  
   .phone {
-    background: url("./mbg.jpg") no-repeat center;
+    background: url("./mbg.jpeg") no-repeat center;
     background-size: cover;
   }
   
@@ -33,7 +35,9 @@
   }
   
   .sliderContainer {
-    top: 140px;
+    align-self: center;
+    width: 90%;
+    top: 50px;
     background-color: rgba(246, 231, 231, 0.1);
     backdrop-filter: blur(20px);
   }
@@ -61,7 +65,7 @@
     pointer-events: none;
   }
 .time-css{
-  height: 50%;
+  height: 80%;
 }
 .time-css-lock{
   font-size: 60px;
@@ -78,7 +82,4 @@
 
 #contactListScreen{
     display: none;
-}
-#contact-list{
-
 }
