@@ -18,8 +18,8 @@
   }
   
   .phone {
-    width: 300px;
-    height: 600px;
+    width: 400px;
+    height: 800px;
   }
   
   .phone::-webkit-scrollbar {
