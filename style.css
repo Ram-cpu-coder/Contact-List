@@ -7,9 +7,7 @@
  .h100{
     height: 100%;
  }
- .hidden{
-    display: none;
- }
+ 
   .phone {
     background: url("./mbg.jpg") no-repeat center;
     background-size: cover;
@@ -66,11 +64,14 @@
     display: none;
   }
   .searchIcon{
-    top: 3px;
-    right: 12px;
+    top: 7px;
+    right: 20px;
     color: black;
   }
 
 #contactListScreen{
     display: none;
+}
+#contact-list{
+  
 }

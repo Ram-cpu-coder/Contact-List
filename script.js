@@ -1,8 +1,66 @@
 
 //================================================
-const apiUrl = "https://randomuser.me/api?results=11";
-let contactList = [];
+//apiUrl to get the random user data
+const apiUrl = "https://randomuser.me/api?results=100";
+// initial contactList array
+let contactList = [{
+    gender: "male",
+    name: {
+        title: "Mr",
+        first: "Logan",
+        last: "Mitchell"
+    },
+    location: {
+        street: {
+            number: 8703,
+            name: "3rd St"
+        },
+        city: "Maitland",
+        state: "Yukon",
+        country: "Canada",
+        postcode: "D4T 0P2",
+        coordinates: {
+            latitude: "-70.5806",
+            longitude: "-119.7890"
+        },
+        timezone: {
+            offset: "+4:30",
+            description: "Kabul"
+        }
+    },
+    email: "logan.mitchell@example.com",
+    login: {
+        uuid: "8aad19ff-b9ee-405c-b473-0722a62e7ae6",
+        username: "lazyduck109",
+        password: "deejay",
+        salt: "RM54dvW7",
+        md5: "b13da34937d7dbd306635c341e60a3ad",
+        sha1: "5809e1fcb654550c7fd3f8e0b9af7e72ff6e8550",
+        sha256: "6506b602d5bd839e082911e3a6086c4bea581468f5e9cd0f0981bda49a69919c"
+    },
+    dob: {
+        date: "1972-08-27T00:29:20.396Z",
+        age: 52
+    },
+    registered: {
+        date: "2005-11-04T02:26:51.636Z",
+        age: 19
+    },
+    phone: "R31 X46-9322",
+    cell: "X30 Z01-0445",
+    id: {
+        name: "SIN",
+        value: "482076775"
+    },
+    picture: {
+        large: "https://randomuser.me/api/portraits/men/13.jpg",
+        medium: "https://randomuser.me/api/portraits/med/men/13.jpg",
+        thumbnail: "https://randomuser.me/api/portraits/thumb/men/13.jpg"
+    },
+    nat: "CA"
+}];
 // ==============================================
+//adding change event trigger for slider value change 
 const slider = document.getElementById("slider");
 
 slider.addEventListener("change", (e) => {
@@ -104,6 +162,15 @@ const displayContactListScreen = async () => {
     //display contact list screen
     displayScreen("contactListScreen");
 
+    //before fetching data
+    //1. show spinner
+    //2. hide contact list 
+
+    const spinner = document.getElementById("spinner");
+
+    const contactListScreenAfterSpinner = document.getElementById("contact-list");
+    contactListScreenAfterSpinner.style.display = "none";
+
     //fetch contact data
     const response = await fetch(apiUrl);
 
@@ -111,8 +178,27 @@ const displayContactListScreen = async () => {
 
     contactList = data.results;
 
+    //after fetching data
+    //1. hide spinner
+    //2. show contact list 
+    spinner.style.display = "none";
+    contactListScreenAfterSpinner.style.display = "block";
+
 
     //populate contact list 
     displayContactList(contactList);
 }
 // ==============================================
+//search functionality
+
+const searchElm = document.getElementById("search");
+searchElm.addEventListener("keyup", (e) => {
+    //check if the input value is in the users full name
+
+    const filterContactList = contactList.filter(item => {
+        const fullname = `${item.name.first.toLowerCase()} ${item.name.last.toLowerCase()}`;
+        return fullname.includes(e.target.value.toLowerCase());
+
+    })
+    displayContactList(filterContactList);
+});
