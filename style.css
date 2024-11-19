@@ -56,10 +56,10 @@
   
     pointer-events: none;
   }
-.time{
+.time-css{
   height: 50%;
 }
-#time{
+.time-css-lock{
   font-size: 60px;
 }
   #appScreen{

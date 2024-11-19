@@ -4,93 +4,199 @@
 const apiUrl = "https://randomuser.me/api?results=100";
 
 // =====================================================
+// date and time on the lock screen
 
-const dayElm = document.getElementById("day");
-const timeElm = document.getElementById("time");
-const today = new Date();
-let day = today.getDay();
-let month = today.getMonth();
-const date = today.getDate();
-const hour = today.getHours() % 12;
-const minute = today.getMinutes();
+const updateDateAndtime = () => {
+    let dayElm = document.getElementsByClassName("day");
+    const timeElm = document.getElementsByClassName("Time");
+    const today = new Date();
 
-switch (day) {
-    case 0:
-        day = "Sunday";
-        break;
-    case 1:
-        day = "Monday";
-        break;
-    case 2:
-        day = "Tuesday";
-        break;
-    case 3:
-        day = "Wednesday";
-        break;
-    case 4:
-        day = "Thursday";
-        break;
+    for (items of timeElm) {
+        items.innerText = today.getHours() % 12 + ":" + today.getMinutes();
+    }
 
-    case 5:
-        day = "Friday";
-        break;
-    case 6:
-        day = "Saturday";
-        break;
+    let dayIndex = today.getDay();
+    let day = '';
+    const date = today.getDate();
+    let monthIndex = today.getMonth();
+    let month = ""
 
-    default:
-        day = "";
-        break;
+    switch (dayIndex) {
+        case 0:
+            day = "Sunday";
+            break;
+        case 1:
+            day = "Monday";
+            break;
+        case 2:
+            day = "Tuesday";
+            break;
+        case 3:
+            day = "Wednesday";
+            break;
+        case 4:
+            day = "Thursday";
+            break;
+
+        case 5:
+            day = "Friday";
+            break;
+        case 6:
+            day = "Saturday";
+            break;
+
+        default:
+            day = "";
+            break;
+    }
+    switch (monthIndex) {
+        case 0:
+            month = "January";
+            break;
+        case 1:
+            month = "February";
+            break;
+
+        case 2:
+            month = "March";
+            break;
+        case 3:
+            month = "April";
+            break;
+
+        case 4:
+            month = "May";
+            break;
+        case 5:
+            month = "June";
+            break;
+
+        case 6:
+            month = "July";
+            break;
+        case 7:
+            month = "August";
+            break;
+
+        case 8:
+            month = "September";
+            break;
+        case 9:
+            month = "October";
+            break;
+
+        case 10:
+            month = "November";
+            break;
+        case 11:
+            month = "December";
+            break;
+
+        default:
+            month = "";
+            break;
+    }
+
+    for (de of dayElm) {
+
+        de.innerText = day + ' ' + date + ' ' + month;
+
+    }
 }
-switch (month) {
-    case 0:
-        month = "January";
-        break;
-    case 1:
-        month = "February";
-        break;
+setInterval(() => {
+    updateDateAndtime();
 
-    case 2:
-        month = "March";
-        break;
-    case 3:
-        month = "April";
-        break;
+}, 1000);
 
-    case 4:
-        month = "May";
-        break;
-    case 5:
-        month = "June";
-        break;
 
-    case 6:
-        month = "July";
-        break;
-    case 7:
-        month = "August";
-        break;
+// const dayElm = document.getElementsByClassName("day");
+// const timeElm = document.getElementById("Time");
+// const today = new Date();
+// let day = today.getDay();
+// let month = today.getMonth();
+// const date = today.getDate();
+// const hour = today.getHours() % 12;
+// const minute = today.getMinutes();
 
-    case 8:
-        month = "September";
-        break;
-    case 9:
-        month = "October";
-        break;
+// switch (day) {
+//     case 0:
+//         day = "Sunday";
+//         break;
+//     case 1:
+//         day = "Monday";
+//         break;
+//     case 2:
+//         day = "Tuesday";
+//         break;
+//     case 3:
+//         day = "Wednesday";
+//         break;
+//     case 4:
+//         day = "Thursday";
+//         break;
 
-    case 10:
-        month = "November";
-        break;
-    case 11:
-        month = "December";
-        break;
+//     case 5:
+//         day = "Friday";
+//         break;
+//     case 6:
+//         day = "Saturday";
+//         break;
 
-    default:
-        month = "";
-        break;
-}
-dayElm.innerText = `${day}, ${date} ${month}`;
-timeElm.innerText = `${hour}:${minute}`;
+//     default:
+//         day = "";
+//         break;
+// }
+// switch (month) {
+//     case 0:
+//         month = "January";
+//         break;
+//     case 1:
+//         month = "February";
+//         break;
+
+//     case 2:
+//         month = "March";
+//         break;
+//     case 3:
+//         month = "April";
+//         break;
+
+//     case 4:
+//         month = "May";
+//         break;
+//     case 5:
+//         month = "June";
+//         break;
+
+//     case 6:
+//         month = "July";
+//         break;
+//     case 7:
+//         month = "August";
+//         break;
+
+//     case 8:
+//         month = "September";
+//         break;
+//     case 9:
+//         month = "October";
+//         break;
+
+//     case 10:
+//         month = "November";
+//         break;
+//     case 11:
+//         month = "December";
+//         break;
+
+//     default:
+//         month = "";
+//         break;
+// }
+// dayElm.innerText = `${day}, ${date} ${month}`;
+// timeElm.innerText = `${hour}:${minute}`;
+
+
 // =====================================================
 // initial contactList array
 let contactList = [{
@@ -292,3 +398,10 @@ searchElm.addEventListener("keyup", (e) => {
     })
     displayContactList(filterContactList);
 });
+
+// ======================================================
+//back to lock screen
+const backToLock = () => {
+    slider.value = 0;
+    displayScreen('lockScreen');
+}
